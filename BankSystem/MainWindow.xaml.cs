@@ -21,55 +21,20 @@ namespace BankSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Bank> Banks;
-        public Operation operation;
         public MainWindow()
         {
             InitializeComponent();
             using (BankContext context = new BankContext())
             {
-                context.Banks.ToList();
-                Banks = context.Banks.ToList();
+                CashMachine cashMachine = new CashMachine();
+                cashMachine.Money = 10000000;
+                cashMachine.Addres = "Московская 25";
+                context.CashMachines.Add(cashMachine);
+
+                context.SaveChanges();
             }
 
-            operation = new Operation();
-            operation.RegisterHandler(AddMoneyMethod, WithdrawMethod);
+            this.Content = new SigInPage(this);
         }
-
-        #region Methods
-        public string AddMoneyMethod(CashMachine machine, Person person, int money)
-        {
-            try
-            {
-                person.Purse.Money += money;
-                return "Транзакция успешно завершена";
-            }
-            catch
-            {
-                return "Во время транзакции возникла ошибка";
-            }
-        }
-
-        public string WithdrawMethod(CashMachine machine, Person person, int money)
-        {
-            if (person.Purse.Money >= money)
-            {
-                if (machine.Money >= money)
-                {
-                    person.Purse.Money -= money;
-                    machine.Money -= money;
-                    return "Транзакция успешно завершена";
-                }
-                else
-                {
-                    return "К сожалению в банкомате не достаточно средств";
-                }
-            }
-            else
-            {
-                return "К сожалению у вас не достаточно средств";
-            }
-        }
-        #endregion
     }
 }

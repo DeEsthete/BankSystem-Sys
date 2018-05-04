@@ -9,8 +9,8 @@ namespace Domain
 {
     public class Bank
     {
-        //[Key]
-        //public int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string BankName { get; set; }
         public IEnumerable<Person> People { get; set; }
         public IEnumerable<CashMachine> CashMachines { get; set; }

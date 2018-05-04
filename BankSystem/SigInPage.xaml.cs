@@ -22,6 +22,7 @@ namespace BankSystem
     public partial class SigInPage : Page
     {
         private Window _window;
+        private Person _person;
         public SigInPage(Window window)
         {
             InitializeComponent();
@@ -31,10 +32,12 @@ namespace BankSystem
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
             List<Person> people;
+            List<Purse> purses;
 
             using (BankContext context = new BankContext())
             {
                 people = context.People.ToList();
+                purses = context.Purses.ToList();
             }
 
             bool isCorrect = false;
@@ -45,18 +48,31 @@ namespace BankSystem
                     if (people[i].Password == passwordTextBox.Text)
                     {
                         isCorrect = true;
+                        _person = people[i];
+                        for (int j = 0; j < purses.Count; j++)
+                        {
+                            if (purses[j].Id == _person.PurseId)
+                            {
+                                _person.Purse = purses[j];
+                            }
+                        }
                     }
                 }
             }
 
             if (isCorrect)
             {
-                _window.Content = new MainPage();
+                _window.Content = new MainPage(_window, _person);
             }
             else
             {
                 MessageBox.Show("Пароль или логин введены не правильно!");
             }
+        }
+
+        private void SignUpButtonClick(object sender, RoutedEventArgs e)
+        {
+            _window.Content = new SignUp(_window);
         }
     }
 }

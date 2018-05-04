@@ -23,16 +23,12 @@ namespace BankSystem
         #region DelegateMethods
         public void AddMoney(CashMachine machine, Person person, int money)
         {
-            //IAsyncResult result = _delegateAddMoney.BeginInvoke(machine, person, money, null, null);
-            //return result.ToString();
-            IAsyncResult result = _delegateAddMoney.BeginInvoke(machine, person, money, new AsyncCallback(asyncResult => MessageBox.Show((string)asyncResult.AsyncState)), null);
+            IAsyncResult result = _delegateAddMoney.BeginInvoke(machine, person, money, new AsyncCallback(asyncResult => MessageBox.Show(_delegateAddMoney.EndInvoke(asyncResult))), null);
         }
 
         public void WithDraw(CashMachine machine, Person person, int money)
         {
-            //IAsyncResult result = _delegateWirthdraw.BeginInvoke(machine, person, money, null, null);
-            //return result.ToString();
-            IAsyncResult result = _delegateWirthdraw.BeginInvoke(machine, person, money, new AsyncCallback(asyncResult => MessageBox.Show((string)asyncResult.AsyncState)), null);
+            IAsyncResult result = _delegateWirthdraw.BeginInvoke(machine, person, money, new AsyncCallback(asyncResult => MessageBox.Show(_delegateWirthdraw.EndInvoke(asyncResult))), null);
         }
         #endregion
         

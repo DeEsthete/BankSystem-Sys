@@ -9,6 +9,12 @@
       Title="MainPage">
 
     <Grid>
-        
+        <TextBox x:Name="sumTextBlock" HorizontalAlignment="Left" Height="23" Margin="334,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="334,195,0,0" TextWrapping="Wrap" Text="Сумма" VerticalAlignment="Top"/>
+        <Button x:Name="withdrawButton" Content="Снять" HorizontalAlignment="Left" Margin="265,244,0,0" VerticalAlignment="Top" Width="128" Height="30" Click="WithdrawButtonClick"/>
+        <Button x:Name="addMoneyButton" Content="Положить" HorizontalAlignment="Left" Margin="393,244,0,0" VerticalAlignment="Top" Width="128" Height="30" Click="AddMoneyButtonClick"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Всего денег на счету:" VerticalAlignment="Top" Height="31" Width="213" FontWeight="Bold" FontSize="20"/>
+        <TextBlock x:Name="cashTextBlock" HorizontalAlignment="Left" Margin="223,10,0,0" TextWrapping="Wrap" Text="0000000000" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="567"/>
+
     </Grid>
 </Page>
