@@ -57,6 +57,14 @@ namespace BankSystem
                 {
                     context.Purses.Find(person.PurseId).Money += money;
                     context.CashMachines.Find(machine.Id).Money += money;
+
+                    History history = new History();
+                    history.CashMachine = machine;
+                    history.Person = person;
+                    history.Money = money;
+                    history.Time = DateTime.Now;
+                    context.Histories.Add(history);
+
                     context.SaveChanges();
                 }
                 return "Транзакция успешно завершена";
@@ -80,6 +88,14 @@ namespace BankSystem
                     {
                         context.Purses.Find(person.PurseId).Money -= money;
                         context.CashMachines.Find(machine.Id).Money -= money;
+
+                        History history = new History();
+                        history.CashMachine = machine;
+                        history.Person = person;
+                        history.Money = money;
+                        history.Time = DateTime.Now;
+                        context.Histories.Add(history);
+
                         context.SaveChanges();
                     }
                     return "Транзакция успешно завершена";
