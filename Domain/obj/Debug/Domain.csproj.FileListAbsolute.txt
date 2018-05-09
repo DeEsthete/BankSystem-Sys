@@ -12,3 +12,16 @@ C:\Users\ПавловЕ\source\repos\BankSystem\Domain\obj\Debug\Domain.csproj.C
 C:\Users\ПавловЕ\source\repos\BankSystem\Domain\obj\Debug\Domain.csproj.CopyComplete
 C:\Users\ПавловЕ\source\repos\BankSystem\Domain\obj\Debug\Domain.dll
 C:\Users\ПавловЕ\source\repos\BankSystem\Domain\obj\Debug\Domain.pdb
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\Domain.dll.config
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\Domain.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\Domain.pdb
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\EntityFramework.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\EntityFramework.xml
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.pdb

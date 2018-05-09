@@ -148,6 +148,11 @@ namespace BankSystem
                 MessageBox.Show(exc.Message);
             }
         }
+
+        private void CurrencyButtonClick(object sender, RoutedEventArgs e)
+        {
+            _window.Content = new ExchangeRates(_window);
+        }
         #endregion
     }
 }

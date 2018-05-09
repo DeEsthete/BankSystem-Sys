@@ -1,0 +1,6 @@
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\bin\Debug\СurrencyClassLibr.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\bin\Debug\СurrencyClassLibr.pdb
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\obj\Debug\СurrencyClassLibr.csprojResolveAssemblyReference.cache
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\obj\Debug\СurrencyClassLibr.csproj.CoreCompileInputs.cache
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\obj\Debug\СurrencyClassLibr.dll
+C:\Users\djoni\Desktop\projects\BankSystem-Sys\СurrencyClassLibr\obj\Debug\СurrencyClassLibr.pdb

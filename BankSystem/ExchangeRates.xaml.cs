@@ -33,25 +33,27 @@ namespace BankSystem
 
             _window = window;
 
-            Thread threadFirst = new Thread(new ThreadStart(GetValueJson));
-            threadFirst.Start();
-            threadFirst.Join();
+            Thread thread = new Thread(new ThreadStart(GetValueJson));
+            thread.Start();
+            thread.Join();
             currencyDataGrid.ItemsSource = currencies;
         }
 
         public static void GetValueJson()
         {
             string valueJson;
-            using (var webClient = new WebClient())
+            using (WebClient webClient = new WebClient())
             {
                 webClient.Encoding = Encoding.UTF8;
                 valueJson = webClient.DownloadString("https://www.cbr-xml-daily.ru/daily_json.js");
             }
-            RootObject obj = JsonConvert.DeserializeObject<RootObject>(valueJson);
-            currencies = new ObservableCollection<Currency>();
-            currencies.Add(obj.Valute.EUR);
-            currencies.Add(obj.Valute.KZT);
-            currencies.Add(obj.Valute.USD);
+            RootObject temp = JsonConvert.DeserializeObject<RootObject>(valueJson);
+            currencies = new ObservableCollection<Currency>
+            {
+                temp.Valute.EUR,
+                temp.Valute.KZT,
+                temp.Valute.USD
+            };
         }
     }
 }
