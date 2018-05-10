@@ -25,3 +25,17 @@ C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.csprojRes
 C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.dll
 C:\Users\djoni\Desktop\projects\BankSystem-Sys\Domain\obj\Debug\Domain.pdb
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\Domain.dll.config
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\Domain.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\Domain.pdb
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\EntityFramework.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\EntityFramework.xml
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\obj\Debug\Domain.dll
+C:\Users\ПавловЕ\Desktop\Project\BankSystem-Sys\Domain\obj\Debug\Domain.pdb

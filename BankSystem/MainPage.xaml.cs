@@ -151,7 +151,7 @@ namespace BankSystem
 
         private void CurrencyButtonClick(object sender, RoutedEventArgs e)
         {
-            _window.Content = new ExchangeRates(_window);
+            _window.Content = new ExchangeRates(_window, _person);
         }
         #endregion
     }

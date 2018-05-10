@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace СurrencyClassLibr
 {
-    public class KZT : Currency
+    public class JPY : Currency
     {
     }
 }

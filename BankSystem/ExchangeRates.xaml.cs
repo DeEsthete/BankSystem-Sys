@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Domain;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,34 +27,50 @@ namespace BankSystem
     public partial class ExchangeRates : Page
     {
         private Window _window;
+        private Person _person;
         private static ObservableCollection<Currency> currencies { get; set; }
-        public ExchangeRates(Window window)
+        private Timer _timer;
+        public ExchangeRates(Window window, Person person)
         {
             InitializeComponent();
 
             _window = window;
+            _person = person;
 
-            Thread thread = new Thread(new ThreadStart(GetValueJson));
-            thread.Start();
-            thread.Join();
+            GetCurrency(null);
+
             currencyDataGrid.ItemsSource = currencies;
+
+            _timer = new Timer(new TimerCallback(GetCurrency), null, 0, 5000);
         }
 
-        public static void GetValueJson()
+        public static void GetCurrency(object obj)
         {
-            string valueJson;
-            using (WebClient webClient = new WebClient())
+            string value;
+            using (WebClient web = new WebClient())
             {
-                webClient.Encoding = Encoding.UTF8;
-                valueJson = webClient.DownloadString("https://www.cbr-xml-daily.ru/daily_json.js");
+                web.Encoding = Encoding.UTF8;
+                value = web.DownloadString("https://www.cbr-xml-daily.ru/daily_json.js");
             }
-            RootObject temp = JsonConvert.DeserializeObject<RootObject>(valueJson);
+            RootObject temp = JsonConvert.DeserializeObject<RootObject>(value);
             currencies = new ObservableCollection<Currency>
             {
                 temp.Valute.EUR,
-                temp.Valute.KZT,
-                temp.Valute.USD
+                temp.Valute.USD,
+                temp.Valute.JPY
             };
+
+            const int RUB = 5;
+            for (int i = 0; i < currencies.Count; i++)
+            {
+                currencies[i].Value = currencies[i].Value / currencies[i].Nominal * RUB;
+                currencies[i].Nominal = 1;
+            }
+        }
+
+        private void MainWindowButtonClick(object sender, RoutedEventArgs e)
+        {
+            _window.Content = new MainPage(_window, _person);
         }
     }
 }

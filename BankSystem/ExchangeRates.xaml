@@ -9,7 +9,7 @@
       Title="ExchangeRates">
 
     <Grid>
-        <DataGrid x:Name="currencyDataGrid" HorizontalAlignment="Left" Height="392" Margin="10,10,0,0" VerticalAlignment="Top" Width="780"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top" Width="190" Height="33"/>
+        <DataGrid CanUserAddRows="False" IsReadOnly="True" x:Name="currencyDataGrid" HorizontalAlignment="Left" Height="338" Margin="10,10,0,0" VerticalAlignment="Top" Width="780"/>
+        <Button x:Name="mainWindowButton" Content="Назад" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Width="190" Height="33" Click="MainWindowButtonClick"/>
     </Grid>
 </Page>

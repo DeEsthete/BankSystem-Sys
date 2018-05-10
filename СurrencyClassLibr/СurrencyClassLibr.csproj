@@ -43,7 +43,7 @@
     <Compile Include="Currency.cs" />
     <Compile Include="CurrencyType.cs" />
     <Compile Include="EUR.cs" />
-    <Compile Include="KZT.cs" />
+    <Compile Include="JPY.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RootObject.cs" />
     <Compile Include="USD.cs" />
