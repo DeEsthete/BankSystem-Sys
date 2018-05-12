@@ -28,7 +28,7 @@ namespace BankSystem
     {
         private Window _window;
         private Person _person;
-        private static ObservableCollection<Currency> currencies { get; set; }
+        private static ObservableCollection<Currency> _currencies { get; set; }
         private Timer _timer;
         public ExchangeRates(Window window, Person person)
         {
@@ -39,7 +39,7 @@ namespace BankSystem
 
             GetCurrency(null);
 
-            currencyDataGrid.ItemsSource = currencies;
+            currencyDataGrid.ItemsSource = _currencies;
 
             _timer = new Timer(new TimerCallback(GetCurrency), null, 0, 5000);
         }
@@ -53,18 +53,19 @@ namespace BankSystem
                 value = web.DownloadString("https://www.cbr-xml-daily.ru/daily_json.js");
             }
             RootObject temp = JsonConvert.DeserializeObject<RootObject>(value);
-            currencies = new ObservableCollection<Currency>
+            _currencies = new ObservableCollection<Currency>
             {
+                temp.Valute.KZT,
                 temp.Valute.EUR,
                 temp.Valute.USD,
                 temp.Valute.JPY
             };
-
-            const int RUB = 5;
-            for (int i = 0; i < currencies.Count; i++)
+            double rubToKzt = (1 / (_currencies[0].Value / _currencies[0].Nominal));
+            for (int i = 0; i < _currencies.Count; i++)
             {
-                currencies[i].Value = currencies[i].Value / currencies[i].Nominal * RUB;
-                currencies[i].Nominal = 1;
+                _currencies[i].Value = _currencies[i].Value / _currencies[i].Nominal;
+                _currencies[i].Nominal = 1;
+                _currencies[i].Value = _currencies[i].Value * rubToKzt;
             }
         }
 

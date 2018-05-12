@@ -26,6 +26,7 @@ namespace BankSystem
             InitializeComponent();
             using (BankContext context = new BankContext())
             {
+                context.CashMachines.ToList();
                 CashMachine cashMachine = new CashMachine();
                 cashMachine.Money = 10000000;
                 cashMachine.Addres = "Московская 25";

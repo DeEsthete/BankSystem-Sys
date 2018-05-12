@@ -11,5 +11,6 @@ namespace СurrencyClassLibr
         public USD USD { get; set; }
         public EUR EUR { get; set; }
         public JPY JPY { get; set; }
+        public KZT KZT { get; set; }
     }
 }
